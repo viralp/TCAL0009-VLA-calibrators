@@ -15,8 +15,8 @@ TCAL0009 flux calibrators = [ "J1800+7828","J1419+5423","0137+331=3C48","0542+49
    > xvfb-run -d casa-pipe --nogui -c TCAL0009_casa_cal_selfcal.py # this will use the latest pipeline  
    
    add this into the sbatch script for multi thread job (X=no. of cpus to parallelize the process)  
-   >export CASAPATH=/home/casa/packages/pipeline/casa-6.6.1-17-pipeline-2024.1.1.22/  
-   >$CASAPATH/bin/mpicasa -n X $CASAPATH/bin/casa --pipeline --nogui -c TCAL0009_casa_cal_selfcal.py  
+   > export CASAPATH=/home/casa/packages/pipeline/casa-6.6.1-17-pipeline-2024.1.1.22/  
+   > $CASAPATH/bin/mpicasa -n X $CASAPATH/bin/casa --pipeline --nogui -c TCAL0009_casa_cal_selfcal.py  
    or 
    2. On other system  
    > casa-6.6.1-17-pipeline-2024.1.1.22/bin/casa --pipeline -c TCAL0009_casa_cal_selfcal.py  
