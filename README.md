@@ -18,11 +18,13 @@ TCAL0009 flux calibrators = [ "J1800+7828","J1419+5423","0137+331=3C48","0542+49
    > casa-6.6.1-17-pipeline-2024.1.1.22/bin/casa --pipeline -c TCAL0009_casa_cal_selfcal.py
    One has to edit the script to add the measurement set name with "orig_vis" input parameter.
 3. User can select the required band to process/image with the "bands_to_process" option. For example, if one wants to process only L and S band data then  
-   bands_to_process = ['L', 'S']
-4. In order to image the calibrators, one has to add the "OBSERVE_TARGET#UNSPECIFIED"  intent into the ms. intent_add = True option will do this.
-5. Script will automatically find the date of observation and based on that it will create YYYY-MM-DD directory and move the original data into it. 
-6. From the above created directory, further it will generate directories with different bands, and under each band directory, it will split the ms and copy under it.
-7. It will process each band data under respective directories with standard VLA pipeline.
-8. Finally it will copy all output images (in fits format) under the product directory, one level above the band directory.  
+   bands_to_process = ['L', 'S']  
+4. In order to image the calibrators, one has to add the "OBSERVE_TARGET#UNSPECIFIED"  intent into the ms. intent_add = True option will do this.  
+5. Script will automatically find the date of observation and based on that it will create YYYY-MM-DD directory and move the original data into it.   
+6. From the above created directory, further it will generate directories with different bands, and under each band directory, it will split the ms and copy under it.  
+7. It will process each band data under respective directories with standard VLA pipeline.  
+8. It will apply all standard calibration steps - setjy, bandpass, gaincal, fluxboot, polcal, etc.  
+9. After applyling calibration tables, it will split the target calibrators and do imaging and self-calibration with "specmode=cube" in tclean task.   
+10. Finally it will copy all output images (in fits format) under the product directory, one level above the band directory.  
    
 
