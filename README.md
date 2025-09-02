@@ -1,6 +1,6 @@
 # Processing TCAL0009 data with VLA pipeline
 
-TCAL0009 is a VLA calibrators monitoring program. Every month VLA monitors following 14 flux calibrators. It has been observed with all VLA bands L, S, C, X, KU, K, KA, and Q.  Each calibrator is observed for a total integration time of 22 sec and total run time of appx. 2 hrs. It also includes 3C286 as the polarisation (angle) calibrator. This monthly data has been reduced with the special developed casa pipeline. This pipeline generates cubes and stokes I, Q, U and V images per band, per calibrator sources.  We have started to use the standard VLA calibration (https://science.nrao.edu/facilities/vla/data-processing/pipeline) and imaging (https://science.nrao.edu/facilities/vla/data-processing/pipeline/vipl_661_v2) pipelines to reduce and image the calibrators of TCAL0009 program. This pipeline will automatically generate self-calibrated cubes and diagnostic plots. 
+TCAL0009 is a VLA calibrators monitoring program. Every month VLA monitors following 14 flux calibrators. It has been observed with all VLA bands L, S, C, X, KU, K, KA, and Q.  Each calibrator is observed for a total integration time of 22 sec and total run time of appx. 2 hrs. It also includes 3C286 as the polarisation (angle) calibrator. This monthly data has been reduced with the special developed casa pipeline. This pipeline generates cubes and stokes I, Q, U and V images per band, per calibrator sources.  We have started to use the standard VLA calibration (https://science.nrao.edu/facilities/vla/data-processing/pipeline) and imaging (https://science.nrao.edu/facilities/vla/data-processing/pipeline/vipl_661_v2) pipelines to reduce and image the calibrators of TCAL0009 program. This pipeline will automatically generate self-calibrated cubes and diagnostic plots.   
 
 TCAL0009 flux calibrators = [ "J1800+7828","J1419+5423","0137+331=3C48","0542+498=3C147","J2355+4950","J0813+4813","J0713+4349",
                               "J0437+2940","J0217+7349","1411+522=3C295","J1153+8058","J0319+4130","0521+166=3C138","1331+305=3C286"]
@@ -9,7 +9,7 @@ TCAL0009 flux calibrators = [ "J1800+7828","J1419+5423","0137+331=3C48","0542+49
 ## Download TCAL0009 data from NRAO archive (un-calibrated)
 
 1. Copy data and above script in the same folder.   
-2. Execute the script as follows     - 
+2. Execute the script as follows-   
    1. On NRAO luster system  
    add this line into the sbatch script for single thread job  
    > xvfb-run -d casa-pipe --nogui -c TCAL0009_casa_cal_selfcal.py # this will use the latest pipeline  
