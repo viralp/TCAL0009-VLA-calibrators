@@ -9,22 +9,22 @@ TCAL0009 flux calibrators = [ "J1800+7828","J1419+5423","0137+331=3C48","0542+49
 ## Download TCAL0009 data from NRAO archive (un-calibrated)
 
 1. Copy data and above script in the same folder.   
-2. Execute the script as follows   - 
+2. Execute the script as follows     - 
    1. On NRAO luster system  
    add this line into the sbatch script for single thread job  
    > xvfb-run -d casa-pipe --nogui -c TCAL0009_casa_cal_selfcal.py # this will use the latest pipeline  
    
-   add this into the sbatch script for multi thread job (X=no. of cpus to parallelize the process)
+   add this into the sbatch script for multi thread job (X=no. of cpus to parallelize the process)  
    >export CASAPATH=/home/casa/packages/pipeline/casa-6.6.1-17-pipeline-2024.1.1.22/
    >$CASAPATH/bin/mpicasa -n X $CASAPATH/bin/casa --pipeline --nogui -c TCAL0009_casa_cal_selfcal_V4.py
    or 
-   2. On other system
+   2. On other system  
    > casa-6.6.1-17-pipeline-2024.1.1.22/bin/casa --pipeline -c TCAL0009_casa_cal_selfcal.py
    One has to edit the script to add the measurement set name with "orig_vis" input parameter.  
 3. Users can select the required band to process/image with the "bands_to_process" option. For example, if one wants to process only L and S band data then  
    bands_to_process = ['L', 'S']    
-4. In order to image the calibrators, one has to add the "OBSERVE_TARGET#UNSPECIFIED"  intent into the ms. intent_add = True option will do this.  
-   It will apply "OBSERVE_TARGET#UNSPECIFIED"  intents to the those fields which have any one of these intents already present:
+4. In order to image the calibrators, one has to add the "OBSERVE_TARGET#UNSPECIFIED"  intent into the ms. intent_add = True option will do this.      
+   It will apply "OBSERVE_TARGET#UNSPECIFIED"  intents to the those fields which have any one of these intents already present:  
        intselect = [
         "CALIBRATE_AMPLI",
         "CALIBRATE_PHASE",
